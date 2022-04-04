@@ -55,7 +55,7 @@ const Footer = () => {
               Custom Software Development
             </Grid>
             <Grid item sx={FooterLinkStyles} component={Link} to='/mobileapps'>
-              Mobile App Development
+              iOS/Android App Development
             </Grid>
             <Grid item sx={FooterLinkStyles} component={Link} to='/websites'>
               Website Development

@@ -9,7 +9,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import { useTheme, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
@@ -63,7 +64,7 @@ function ElevationScroll(props) {
 const menuOptions = [
   { name: "Services", path: "/services" },
   { name: "Custom Software Development", path: "/customsoftware" },
-  { name: "Mobile App Development", path: "/mobileapps" },
+  { name: "iOS/Android App Development", path: "/mobileapps" },
   { name: "Website Development", path: "/websites" },
 ];
 
@@ -125,7 +126,7 @@ const Header = () => {
             key={`Tab-${tab}-${tabIndex}`}
             component={Link}
             to={tab.path}
-            sx={TabStyles}
+            sx={theme => ({...TabStyles(theme), marginRight: tab.path === "/contact"? "50px": 0})}
             label={tab.name}
             aria-owns={
               tab.path === "/services" ? (anchorEl ? "simple-menu" : undefined) : undefined
@@ -143,11 +144,14 @@ const Header = () => {
         sx={(theme) => ({
           ...theme.typography.estimate,
           borderRadius: "50px",
-          marginLeft: "50px",
+          
           marginRight: "25px",
           height: "45px",
           lineHeight: 1,
           textAlign: "center",
+          "&:hover": {
+            backgroundColor: theme.palette.secondary.light
+          }
         })}>
         Free Estimate
       </Button>
@@ -250,7 +254,7 @@ const Header = () => {
                 component='img'
                 src={logo}
                 alt='company logo'
-                sx={{ height: { xs: "5em", sm: "6em", lg: "7em" } }}
+                sx={{ height: { xs: "5em", md: "6em", lg: "7em" } }}
               />
             </Button>
             {matchesMd ? drawer : tabs}
@@ -258,7 +262,7 @@ const Header = () => {
         </AppBar>
       </ElevationScroll>
       {/* render a box to push content hidden under the appbar */}
-      <Box sx={{ minHeight: { xs: "5em", sm: "6em", lg: "7em" } }} />
+      <Box sx={{ minHeight: { xs: "5em", md: "6em", lg: "7em" } }} />
     </>
   );
 };
