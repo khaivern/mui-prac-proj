@@ -4,6 +4,8 @@ import { ThemeProvider } from "@mui/material/styles";
 
 import Header from "./ui/Header";
 import theme from "./ui/Theme";
+import Footer from "./ui/Footer";
+import LandingPage from "./LandingPage";
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<div>Home</div>} />
+          <Route path="/" element={<LandingPage/>} />
           <Route path="/services" element={<div>Services</div>} />
           <Route path="/customsoftware" element={<div>Custom Software</div>} />
           <Route path="/mobileapps" element={<div>Mobile Apps</div>} />
@@ -21,6 +23,7 @@ function App() {
           <Route path="/contact" element={<div>Contact Us</div>} />
           <Route path="/estimate" element={<div>Free Estimate</div>} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
