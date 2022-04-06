@@ -104,14 +104,14 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-  let pathname = useLocation().pathname;
+  const pathname = useLocation().pathname;
   // Update the selected tab index using the parameter from url
   useEffect(() => {
     const tabIndex = tabsOptions.findIndex((tab) => tab.path === pathname);
     const menuIndex = menuOptions.findIndex((menu) => menu.path === pathname);
 
     if (pathname === "/estimate") {
-      setSelectedTabIndex(tabIndex); // always -1 in this case.
+      setSelectedTabIndex(false);
     } else {
       setSelectedTabIndex(tabIndex === -1 ? 1 : tabIndex);
     }
@@ -144,7 +144,6 @@ const Header = () => {
         sx={(theme) => ({
           ...theme.typography.estimate,
           borderRadius: "50px",
-          
           marginRight: "25px",
           height: "45px",
           lineHeight: 1,
@@ -226,7 +225,7 @@ const Header = () => {
             to='/estimate'
             onClick={() => {
               setDrawerIsVisible(false);
-              setSelectedTabIndex(-1);
+              setSelectedTabIndex(false);
             }}
             sx={{ ...ListItemButtonStyles, backgroundColor: "secondary.main" }}>
             <ListItemText sx={{ "& .MuiListItemText-primary": { color: "#fff" } }}>

@@ -1,5 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie-player";
+import { Link } from "react-router-dom";
 import { styled } from "@mui/system";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
@@ -8,15 +9,16 @@ import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import { useMediaQuery } from "@mui/material";
 
 import ButtonArrow from "./ui/ButtonArrow";
+import CallToAction from "./ui/CallToAction";
 import animationData from "../animations/landinganimation/data";
 import customSoftwareIcon from "../assets/Custom Software Icon.svg";
 import mobileAppsIcon from "../assets/mobileIcon.svg";
 import websitesIcon from "../assets/websiteIcon.svg";
 import revolutionBackground from "../assets/repeatingBackground.svg";
 import infoBackground from "../assets/infoBackground.svg";
-import { useMediaQuery } from "@mui/material";
 
 const StyledLottie = styled(Lottie)({
   width: "100%",
@@ -30,6 +32,27 @@ const MainContainerStyles = {
     lg: "5em",
   },
 };
+
+const InformationButtonStyles = {
+  fontSize: "0.75rem",
+  height: "35px",
+  padding: "5px",
+  marginBottom: { xs: "2em", md: 0 },
+  color: "#fff",
+  borderColor: "#fff",
+  "&:hover": {
+    borderColor: "#fff",
+  },
+};
+
+export const BackgroundImageStyles = (imageSrc) => ({
+  backgroundImage: `url(${imageSrc})`,
+  backgroundPosition: "center",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  height: "100%",
+  width: "100%",
+});
 
 const LandingPage = () => {
   const theme = useTheme();
@@ -47,6 +70,8 @@ const LandingPage = () => {
             <Grid item container justifyContent='center' marginTop='1em'>
               <Grid item>
                 <Button
+                  component={Link}
+                  to='/estimate'
                   variant='contained'
                   sx={(theme) => ({
                     ...theme.typography.estimate,
@@ -64,6 +89,8 @@ const LandingPage = () => {
               </Grid>
               <Grid item>
                 <Button
+                  component={Link}
+                  to='/revolution'
                   variant='outlined'
                   sx={(theme) => ({
                     ...theme.typography.learnButton,
@@ -113,6 +140,8 @@ const LandingPage = () => {
               .
             </Typography>
             <Button
+              component={Link}
+              to='/customsoftware'
               variant='outlined'
               sx={{
                 ...theme.typography.learnButton,
@@ -153,6 +182,8 @@ const LandingPage = () => {
               {matchesSM ? null : <br />} with either mobile platform.
             </Typography>
             <Button
+              component={Link}
+              to='/mobileapps'
               variant='outlined'
               sx={{
                 ...theme.typography.learnButton,
@@ -194,6 +225,8 @@ const LandingPage = () => {
               Optimized for Search Engines, built for speed.
             </Typography>
             <Button
+              component={Link}
+              to='/websites'
               variant='outlined'
               sx={{
                 ...theme.typography.learnButton,
@@ -244,6 +277,8 @@ const LandingPage = () => {
                     revolution.
                   </Typography>
                   <Button
+                    component={Link}
+                    to='/revolution'
                     variant='outlined'
                     sx={(theme) => ({
                       ...theme.typography.learnButton,
@@ -259,39 +294,37 @@ const LandingPage = () => {
             </CardContent>
           </Card>
           {/* Background for the card to sit on */}
-          <Box
-            sx={{
-              backgroundImage: `url(${revolutionBackground})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              height: "100%",
-              width: "100%",
-            }}
-          />
+          <Box sx={BackgroundImageStyles(revolutionBackground)} />
         </Grid>
       </Grid>
       {/* Information Block------------------------------------------------ */}
       <Grid item>
-        <Grid container direction='row' sx={{ height: "80em", alignItems: "center" }} >
-          <Grid item container sx={{ position: "absolute" }} direction={{xs: "column", sm: "row"}} spacing={{xs: 10, sm: 0}} >
-            <Grid item sx={{ marginLeft: {xs: 0, sm:"2em", md:"5em"}, textAlign: {xs: "center", sm: "initial"} }} sm>
-              <Grid container direction='column' >
+        <Grid container direction='row' sx={{ height: "80em", alignItems: "center" }}>
+          <Grid
+            item
+            container
+            sx={{ position: "absolute" }}
+            direction={{ xs: "column", sm: "row" }}>
+            <Grid
+              item
+              sx={{
+                marginLeft: { xs: 0, sm: "2em", md: "5em" },
+                textAlign: { xs: "center", sm: "initial" },
+              }}
+              sm>
+              <Grid container direction='column' sx={{marginBottom: {xs: "10em", sm: 0}}}>
                 <Typography variant='h2' sx={{ color: "#fff" }}>
                   About Us
                 </Typography>
                 <Typography variant='subtitle2'>Let’s get personal.</Typography>
                 <Grid item>
                   <Button
+                    component={Link}
+                    to='/about'
                     variant='outlined'
                     sx={{
                       ...theme.typography.learnButton,
-                      fontSize: "0.75rem",
-                      height: "35px",
-                      padding: "5px",
-                      marginBottom: { xs: "2em", md: 0 },
-                      color: "#fff",
-                      borderColor: "#fff",
+                      ...InformationButtonStyles,
                     }}>
                     <span style={{ marginRight: "10px" }}>Learn more</span>
                     <ButtonArrow width={10} height={10} fill='#fff' />
@@ -299,7 +332,13 @@ const LandingPage = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item sx={{ marginRight: {xs:0, sm: "2em", md:"5em"}, textAlign: {xs:"center", sm:"right"} }} sm>
+            <Grid
+              item
+              sx={{
+                marginRight: { xs: 0, sm: "2em", md: "5em" },
+                textAlign: { xs: "center", sm: "right" },
+              }}
+              sm>
               <Grid container direction='column'>
                 <Typography variant='h2' sx={{ color: "#fff" }}>
                   Contact Us
@@ -312,15 +351,12 @@ const LandingPage = () => {
                 </Typography>
                 <Grid item>
                   <Button
+                    component={Link}
+                    to='/contact'
                     variant='outlined'
                     sx={{
                       ...theme.typography.learnButton,
-                      fontSize: "0.75rem",
-                      height: "35px",
-                      padding: "5px",
-                      marginBottom: { xs: "2em", md: 0 },
-                      color: "#fff",
-                      borderColor: "#fff",
+                      ...InformationButtonStyles,
                     }}>
                     <span style={{ marginRight: "10px" }}>Learn more</span>
                     <ButtonArrow width={10} height={10} fill='#fff' />
@@ -329,18 +365,12 @@ const LandingPage = () => {
               </Grid>
             </Grid>
           </Grid>
-
-          <Box
-            sx={{
-              backgroundImage: `url(${infoBackground})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              height: "100%",
-              width: "100%",
-            }}
-          />
+          {/* Image for Info to sit on */}
+          <Box sx={BackgroundImageStyles(infoBackground)} />
         </Grid>
+      </Grid>
+      <Grid item>
+        <CallToAction />
       </Grid>
     </Grid>
   );
