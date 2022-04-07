@@ -7,6 +7,7 @@ import theme from "./ui/Theme";
 import Footer from "./ui/Footer";
 import LandingPage from "./LandingPage";
 import Services from "./Services";
+import CustomSoftware from "./CustomSoftware";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/services' element={<Services />} />
-          <Route path='/customsoftware' element={<div>Custom Software</div>} />
+          <Route path='/customsoftware' element={<CustomSoftware />} />
           <Route path='/mobileapps' element={<div>Mobile Apps</div>} />
           <Route path='/websites' element={<div>Websites</div>} />
           <Route path='/revolution' element={<div>The Revolution</div>} />
