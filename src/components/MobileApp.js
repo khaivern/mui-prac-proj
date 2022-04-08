@@ -48,7 +48,7 @@ const MobileApp = () => {
           </Grid>
         </Grid>
         <Grid item sx={{ marginTop: "0.7rem", display: { xs: "none", md: "initial" } }}>
-          <IconButton disableRipple component={Link} to='/customsoftware'>
+          <IconButton disableRipple component={Link} to='/websites'>
             <Box component='img' src={forwardArrow} alt='Forward to Website Development page' />
           </IconButton>
         </Grid>

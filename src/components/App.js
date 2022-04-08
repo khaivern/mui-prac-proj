@@ -8,6 +8,8 @@ import Footer from "./ui/Footer";
 import LandingPage from "./LandingPage";
 import Services from "./Services";
 import CustomSoftware from "./CustomSoftware";
+import MobileApp from "./MobileApp";
+import Website from "./Website";
 
 function App() {
   return (
@@ -18,8 +20,8 @@ function App() {
           <Route path='/' element={<LandingPage />} />
           <Route path='/services' element={<Services />} />
           <Route path='/customsoftware' element={<CustomSoftware />} />
-          <Route path='/mobileapps' element={<div>Mobile Apps</div>} />
-          <Route path='/websites' element={<div>Websites</div>} />
+          <Route path='/mobileapps' element={<MobileApp/>} />
+          <Route path='/websites' element={<Website/>} />
           <Route path='/revolution' element={<div>The Revolution</div>} />
           <Route path='/about' element={<div>About Us</div>} />
           <Route path='/contact' element={<div>Contact Us</div>} />
