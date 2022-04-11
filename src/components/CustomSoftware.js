@@ -20,12 +20,14 @@ import CallToAction from "./ui/CallToAction";
 
 const CustomSoftware = () => {
   return (
-    <Grid
-      container
-      direction='column'
-      >
+    <Grid container direction='column'>
       {/* Main Summary Section -------------------------------- */}
-      <Grid item container direction='row' justifyContent={{ xs: "center", md: "flex-start" }} sx={{ padding: { xs: "1em 1.5em 10em", sm: "2em 5em 10em 5em" } }}>
+      <Grid
+        item
+        container
+        direction='row'
+        justifyContent={{ xs: "center", md: "flex-start" }}
+        sx={{ padding: { xs: "1em 1.5em 10em", sm: "2em 5em 10em 5em" } }}>
         <Grid item sx={{ margin: "0.7em 1em 0 -3.5em", display: { xs: "none", md: "initial" } }}>
           <IconButton disableRipple component={Link} to='/services'>
             <Box component='img' src={backArrow} alt='Back to services page arrow' />
@@ -75,7 +77,7 @@ const CustomSoftware = () => {
         container
         direction='row'
         justifyContent='center'
-        sx={{ marginTop: "15em", marginBottom: "20em", padding: { xs: "0 1.5em", sm: "0 5em" }}}>
+        sx={{ marginTop: "15em", marginBottom: "20em", padding: { xs: "0 1.5em", sm: "0 5em" } }}>
         <Grid
           item
           container
@@ -210,7 +212,11 @@ const CustomSoftware = () => {
       </Grid>
 
       {/* Root-Cause Analysis Section -------------------------------- */}
-      <Grid item container direction='row' sx={{ marginTop: "20em", marginBottom: "20em", padding: { xs: "0 1.5em", sm: "0 5em" } }} >
+      <Grid
+        item
+        container
+        direction='row'
+        sx={{ marginTop: "20em", marginBottom: "20em", padding: { xs: "0 1.5em", sm: "0 5em" } }}>
         <Grid item container direction='column' alignItems='center'>
           <Grid item>
             <Box
@@ -242,8 +248,7 @@ const CustomSoftware = () => {
         direction={{ xs: "column", md: "row" }}
         alignItems={{ xs: "center", md: "initial" }}
         justifyContent='space-around'
-        sx={{ padding: { xs: "0 1.5em", sm: "0 5em" },  marginBottom: "20em" }}
-        >
+        sx={{ padding: { xs: "0 1.5em", sm: "0 5em" }, marginBottom: "20em" }}>
         {/* Automation Section */}
         <Grid item container md sx={{ marginBottom: { xs: "15em", md: 0 } }}>
           <Grid
