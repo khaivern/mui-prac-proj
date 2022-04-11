@@ -11,6 +11,7 @@ import CustomSoftware from "./CustomSoftware";
 import MobileApp from "./MobileApp";
 import Website from "./Website";
 import Revolution from "./Revolution";
+import About from "./About";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           <Route path='/mobileapps' element={<MobileApp/>} />
           <Route path='/websites' element={<Website/>} />
           <Route path='/revolution' element={<Revolution/>} />
-          <Route path='/about' element={<div>About Us</div>} />
+          <Route path='/about' element={<About/>} />
           <Route path='/contact' element={<div>Contact Us</div>} />
           <Route path='/estimate' element={<div>Free Estimate</div>} />
         </Routes>
