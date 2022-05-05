@@ -12,6 +12,8 @@ import MobileApp from "./MobileApp";
 import Website from "./Website";
 import Revolution from "./Revolution";
 import About from "./About";
+import Contact from "./Contact";
+import Estimate from "./Estimate";
 
 function App() {
   return (
@@ -22,12 +24,12 @@ function App() {
           <Route path='/' element={<LandingPage />} />
           <Route path='/services' element={<Services />} />
           <Route path='/customsoftware' element={<CustomSoftware />} />
-          <Route path='/mobileapps' element={<MobileApp/>} />
-          <Route path='/websites' element={<Website/>} />
-          <Route path='/revolution' element={<Revolution/>} />
-          <Route path='/about' element={<About/>} />
-          <Route path='/contact' element={<div>Contact Us</div>} />
-          <Route path='/estimate' element={<div>Free Estimate</div>} />
+          <Route path='/mobileapps' element={<MobileApp />} />
+          <Route path='/websites' element={<Website />} />
+          <Route path='/revolution' element={<Revolution />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/estimate' element={<Estimate />} />
         </Routes>
         <Footer />
       </BrowserRouter>

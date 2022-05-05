@@ -17,6 +17,35 @@ const theme = createTheme({
       main: arcOrange,
     },
   },
+  components: {
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: arcBlue,
+          fontSize: "1rem",
+        },
+      },
+    },
+    MuiInput: {
+      styleOverrides: {
+        root: {
+          color: arcGrey,
+          fontWeight: 300,
+        },
+        underline: {
+          "&:before": {
+            borderBottom: `2px solid ${arcBlue}`,
+          },
+          // "&:hover:not($disabled):not($focused):not($error):before":{
+          //   borderBottom: `2px solid ${arcBlue}`
+          // }
+          "&&:hover:before": {
+            borderBottom: `2px solid ${arcBlue}`,
+          },
+        },
+      },
+    },
+  },
   typography: {
     tab: {
       fontFamily: "Raleway",
@@ -48,6 +77,12 @@ const theme = createTheme({
       fontSize: "1.75rem",
       color: arcBlue,
       fontWeight: 700,
+    },
+    h6: {
+      fontWeight: 500,
+      fontFamily: "Raleway",
+      color: arcBlue,
+      lineHeight: 1
     },
     subtitle1: {
       fontSize: "1.25rem",

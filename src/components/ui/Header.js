@@ -261,7 +261,7 @@ const Header = () => {
         </AppBar>
       </ElevationScroll>
       {/* render a box to push content hidden under the appbar */}
-      <Box sx={{ minHeight: { xs: "5em", md: "6em", lg: "7em" } }} />
+      <Box sx={{ minHeight: { xs: "5em", md: "6em" } }} />
     </>
   );
 };
