@@ -197,7 +197,7 @@ const Contact = () => {
             item
             container
             direction='column'
-            sx={{ "&.MuiGrid-item": { maxWidth: { xs: "20em" } } }}>
+            sx={{ "&.MuiGrid-item": { width: { xs: "20em" } } }}>
             <Grid item marginBottom='0.5em'>
               <TextField
                 label='Name'
@@ -235,7 +235,7 @@ const Contact = () => {
           </Grid>
 
           {/* Message */}
-          <Grid item sx={{ "&.MuiGrid-item": { maxWidth: { xs: "20em" } } }}>
+          <Grid item sx={{ "&.MuiGrid-item": { width: { xs: "20em" } } }}>
             <TextField
               sx={{
                 border: `2px solid ${theme.palette.primary.main}`,
@@ -273,7 +273,7 @@ const Contact = () => {
         open={open}
         onClose={() => setOpen(false)}
         PaperProps={{
-          sx: { padding: { xs: "1em 0", sm: "1em 5em", md: "1em 10em", lg: "5em 20em" } },
+          sx: { padding: { xs: "1em 0", sm: "1em 5em", md: "1em 15em", lg: "5em 25em" } },
         }}>
         <DialogContent>
           <Grid container direction='column' alignItems='center'>
@@ -287,7 +287,7 @@ const Contact = () => {
               item
               container
               direction='column'
-              sx={{ "&.MuiGrid-root.MuiGrid-item": { maxWidth: "20em" } }}>
+              sx={{ "&.MuiGrid-root.MuiGrid-item": { width: {xs: "100%", md: "20em"} } }}>
               <Grid item marginBottom='0.5em'>
                 <TextField
                   label='Name'
@@ -325,7 +325,7 @@ const Contact = () => {
             </Grid>
 
             {/* Dialog - Message */}
-            <Grid item sx={{ "&.MuiGrid-root.MuiGrid-item": { maxWidth: "20em" } }}>
+            <Grid item sx={{ "&.MuiGrid-root.MuiGrid-item": { width: {xs: "100%", md: "20em"} } }}>
               <TextField
                 sx={{
                   border: `2px solid ${theme.palette.primary.main}`,
